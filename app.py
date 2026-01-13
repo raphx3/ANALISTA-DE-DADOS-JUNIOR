@@ -8,7 +8,7 @@ from sklearn.preprocessing import StandardScaler
 import plotly.express as px
 
 # 1. Configurações da Página
-st.set_page_config(page_title="Geomarketing & Business Intelligence", layout="wide")
+st.set_page_config(page_title="Geomarketing & Business Intelligence", layout="centered")
 
 # 2. Simulação de Dados Estruturada (Cenário de Mercado)
 @st.cache_data
@@ -61,7 +61,7 @@ df['Regiao_Cluster'] = kmeans.fit_predict(X_scaled)
 
 # 4. Header Estratégico
 st.title("Inteligência de Mercado e Geomarketing")
-st.markdown(f"**Analista Responsável:** Raphael Alvarenga da Silva | Case: Otimização de vendas")
+st.markdown(f"**Analista Responsável:** Raphael Alvarenga da Silva | Case: Otimização de Last-Mile")
 
 # Proposta de Layout Harmônico (Cards de Metodologia)
 st.divider()
@@ -200,8 +200,8 @@ with ins3:
 st.divider()
 
 with st.container():
-    # Ajustamos a proporção para [0.6, 4] para 'espremer' a coluna da foto e aproximar o texto
-    col_img, col_title = st.columns([0.6, 4])
+    # Usamos gap="small" para minimizar o espaço padrão entre as colunas
+    col_img, col_title = st.columns([0.5, 4], gap="small")
     
     with col_img:
         st.markdown("""
@@ -211,7 +211,7 @@ with st.container():
                 border: 2px solid #00C781;
                 object-fit: cover;
             }
-            /* Remove o espaço extra que o Streamlit coloca entre colunas especificamente nesta seção */
+            /* Remove paddings das colunas para permitir a aproximação total */
             [data-testid="column"] {
                 padding-left: 0rem !important;
                 padding-right: 0rem !important;
@@ -221,11 +221,11 @@ with st.container():
         st.image("foto_perfil.png", width=110)
         
     with col_title:
-        # margin-left negativo traz o texto para perto da foto
-        # margin-top no parágrafo do cargo cria o espaçamento vertical solicitado
+        # Aumentamos o margin-left negativo para eliminar o vácuo horizontal
+        # margin-top 5px no cargo para a distância que você gostou anteriormente
         st.markdown("""
-            <div style='margin-left: -20px; margin-top: 10px;'>
-                <h2 style='margin-bottom: 0px;'>Raphael Alvarenga</h2>
+            <div style='margin-left: -0px; margin-top: -6px;'>
+                <h2 style='margin-bottom: 0px; line-height: 1.1;'>Raphael Alvarenga</h2>
                 <p style='color: #00C781; font-weight: bold; margin-top: 5px;'>Analista de Dados | Business Intelligence</p>
             </div>
             """, unsafe_allow_html=True)
@@ -233,11 +233,12 @@ with st.container():
     # Texto de Motivação Justificado
     st.markdown("""
 <div style="text-align: justify;">
+<b>Por quê?</b><br>
 Este projeto nasceu da minha paixão por transformar dados complexos em decisões estratégicas. 
 Embora minha base venha de análise de dados socioambientais da Oceanografia, encontrei no 
 <b>Geomarketing, Séries Temporais e na Análise de Dados de Negócios</b> o ambiente ideal para 
 aplicar meus conhecimentos em desafios reais de mercado.<br><br>
-<b>Meu Diferencial: Pensar Diferente</b><br>
+<b>Meu Diferencial</b><br>
 Acredito que o fato de vir de uma área científica distinta me confere um diferencial competitivo: 
 a capacidade de <b>pensar fora da caixa</b>. Minha formação me ensinou a observar fenômenos complexos 
 por diferentes ângulos, uma habilidade que agora transponho para encontrar padrões de mercado que 
@@ -250,7 +251,7 @@ Estou em busca de oportunidades onde eu possa aplicar minhas habilidades em
 <b>atuação de longo prazo</b>. Meu objetivo é aprender continuamente, me especializar e crescer 
 junto à empresa, contribuindo para que a cultura de dados seja um diferencial competitivo.<br><br>
 <b>Cultura e Colaboração</b><br>
-Sou alguém que <b>gosta de pessoas e de trabalhar em equipe</b>. Acredito que a tecnologia só faz 
+Sou uma pessoa que <b>gosta de pessoas e de trabalhar em equipe</b>. Acredito que a tecnologia só faz 
 sentido quando compartilhada e construída coletivamente. Tenho prazer em me relacionar, trocar 
 conhecimentos e, acima de tudo, em <b>colocar a minha cara nos projetos</b> — trazendo um toque 
 pessoal de dedicação, senso de dono e criatividade em cada solução que entrego.
