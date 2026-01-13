@@ -37,6 +37,25 @@ O painel oferece uma visão 360º da operação logística e comercial:
 ## Como Executar o Projeto
 
 **1. Clone o repositório:**
-```bash
-git clone [https://github.com/seu-usuario/nome-do-repositorio.git](https://github.com/seu-usuario/nome-do-repositorio.git)
-cd nome-do-repositorio
+
+    git clone https://github.com/raphx3/ANALISTA-DE-DADOS-JUNIOR.git
+
+**2. Navegue até o repositório:**
+    
+    cd nome-do-repositorio
+
+**3. Crie o ambiente virtual:**
+
+    python -m venv .venv
+
+**4. Ative o ambiente virtual:**
+
+    Windows: .\.venv\Scripts\activate
+
+**5. Instale as dependências:**
+
+    pip install -r requirements.txt
+    
+**6. Execução do Aplicativo**
+
+    streamlit run app.py
